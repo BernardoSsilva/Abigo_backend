@@ -49,7 +49,11 @@ namespace Abigo.Application.UseCases.AvailableLocales.Post
                 Street = newLocale.Street,
                 VacanciesNumber = newLocale.VacanciesNumber,
                 contactPhone = newLocale.contactPhone,
+
             };
+
+            await _unitOfWork.Commit();
+
             return response;
         }
     }
