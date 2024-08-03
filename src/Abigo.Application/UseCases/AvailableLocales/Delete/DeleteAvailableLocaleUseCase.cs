@@ -34,7 +34,7 @@ namespace Abigo.Application.UseCases.AvailableLocales.Delete
 
             if(localeToDelete is null)
             {
-                throw new ArgumentException("not found")
+                throw new ArgumentException("not found");
             }
 
             var decodedToken = tokenAdmin.DecodeToken(token);
