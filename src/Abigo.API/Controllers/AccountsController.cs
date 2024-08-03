@@ -10,7 +10,7 @@ namespace Abigo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsControllers : ControllerBase
+    public class Accounts : ControllerBase
     {
 
         [HttpPost]

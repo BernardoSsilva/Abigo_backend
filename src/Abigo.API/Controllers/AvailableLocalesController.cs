@@ -12,7 +12,7 @@ namespace Abigo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AvailableLocalesController : ControllerBase
+    public class AvailableLocales : ControllerBase
     {
         [HttpPost]
         [ProducesResponseType(typeof(AvailableLocalesShortResponseJson), StatusCodes.Status201Created)]
@@ -53,7 +53,7 @@ namespace Abigo.API.Controllers
         }
 
         [HttpGet]
-        [Route("availableLocale/select/city/")]
+        [Route("locale/select/city/")]
         [ProducesResponseType(typeof(MultipleLocalesResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> FindAvailableLocaleByCity([FromServices] IFindAllLocalesInACityUseCase useCase, [FromQuery(Name = "cityName")] string cityName)
@@ -68,7 +68,7 @@ namespace Abigo.API.Controllers
         }
 
         [HttpGet]
-        [Route("availableLocale/find/locale/name")]
+        [Route("lLocale/find/locale/name")]
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> FindAvailableLocaleByName([FromServices] IFindLocaleByNameUseCase useCase, [FromQuery(Name = "localeName")] string localeName)
@@ -83,7 +83,7 @@ namespace Abigo.API.Controllers
         }
 
         [HttpGet]
-        [Route("availableLocale/find/category")]
+        [Route("locale/find/category")]
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> FindAvailableLocalesByCategory([FromServices] IFindAllLocalesByCategoryUseCase useCase, [FromQuery(Name = "localeCategory")] LocalesCategories localeCategory)
@@ -99,7 +99,7 @@ namespace Abigo.API.Controllers
 
 
         [HttpGet]
-        [Route("availableLocale/org/{id}")]
+        [Route("locale/org/{id}")]
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> FindAvailableLocaleByAccountId([FromServices] IFindLocalesByAccountUseCase useCase, [FromRoute] string id)
@@ -114,7 +114,7 @@ namespace Abigo.API.Controllers
         }
 
         [HttpGet]
-        [Route("availableLocale/neighborhood/")]
+        [Route("locale/neighborhood/")]
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> FindAvailableLocaleByNeighborhood([FromServices] IFindAllLocalesByNeighborhoodUseCase useCase, [FromQuery(Name = "neighborhoodName")] string neighborhoodName) {
