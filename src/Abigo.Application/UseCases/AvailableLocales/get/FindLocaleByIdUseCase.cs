@@ -5,12 +5,11 @@ using AutoMapper;
 
 namespace Abigo.Application.UseCases.AvailableLocales.get
 {
-    internal class FindLoaleByIdUseCase : IFindLocaleByNameUseCase
-    {
+    public class FindLocaleByIdUseCase : IFindLocaleByIdUseCase { 
         private readonly IAvailableLocalesRepository _repository;
         private readonly IMapper _mapper;
 
-        public FindLoaleByIdUseCase(IAvailableLocalesRepository repository, IMapper mapper)
+        public FindLocaleByIdUseCase(IAvailableLocalesRepository repository, IMapper mapper)
         {
             _mapper = mapper;
             _repository = repository;
