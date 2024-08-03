@@ -33,6 +33,7 @@ namespace Abigo.Communication.Responses.AvailableLocales
         public bool IsActive { get; set; }
 
         public string LocaleName { get; set; } = string.Empty;
+        public string HelpDescription { get; set; } = string.Empty;
 
 
     }

@@ -4,9 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DeployConnection");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new ArgumentException("Connection string 'DefaultConnection' is null or empty.");
+}
 // Add services to the container.
 builder.Services.AddEntityFrameworkNpgsql()
-    .AddDbContext<AbigoDbAccess>(options => options.UseNpgsql("Host=localhost;Port=3306;Pooling=true;Database=abigo_database;User Id=postgres;Password=admin"));
+    .AddDbContext<AbigoDbAccess>(options => options.UseNpgsql(connectionString));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -30,6 +30,7 @@ namespace Abigo.Domain.Entities
 
         public string ReferencePoint { get; set; } = string.Empty;
 
+        public string HelpDescription { get; set; } = string.Empty;
         public LocalesCategories Category { get; set; }
 
         public bool IsActive { get; set; }
