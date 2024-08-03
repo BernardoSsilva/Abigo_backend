@@ -4,8 +4,9 @@ using System.Numerics;
 
 namespace Abigo.Domain.Entities
 {
-    public class DisponibleLocales:BaseEntity
+    public class DisponibleLocalesEntity:BaseEntity
     {
+        public required string AccountId { get; set; }
         public required string PostalCode { get; set; } 
         public required string City { get; set; }
         public required UFS UF { get; set; }
