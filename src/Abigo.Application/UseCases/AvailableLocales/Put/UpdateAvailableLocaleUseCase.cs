@@ -46,11 +46,10 @@ namespace Abigo.Application.UseCases.AvailableLocales.Put
             }
 
 
-            var newLocaleData = _mapper.Map<AvailableLocalesEntity>(request);
 
-            localeToUpdate = _mapper.Map(localeToUpdate, newLocaleData);
+            localeToUpdate = _mapper.Map(request, localeToUpdate);
 
-            await _repository.EditLocale(localeToUpdate);
+            _repository.EditLocale(localeToUpdate);
             await _unitOfWork.Commit();
 
 

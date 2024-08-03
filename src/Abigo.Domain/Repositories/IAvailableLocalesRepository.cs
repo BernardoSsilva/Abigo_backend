@@ -17,8 +17,9 @@ namespace Abigo.Domain.Repositories
 
 
         Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByAccount(string accountId);
+        Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByNeighborHood(string neighborhoodName);
 
-        Task EditLocale(AvailableLocalesEntity localeData);
+        void EditLocale(AvailableLocalesEntity localeData);
         Task DeleteLocale(string localeId);
     }
 }

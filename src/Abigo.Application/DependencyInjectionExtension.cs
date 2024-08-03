@@ -7,6 +7,8 @@ using Abigo.Application.UseCases.Accountables.Post;
 using Abigo.Application.UseCases.Accountables.Post.Interfaces;
 using Abigo.Application.UseCases.Accountables.Put;
 using Abigo.Application.UseCases.Accountables.Put.Interfaces;
+using Abigo.Application.UseCases.AvailableLocales.Delete;
+using Abigo.Application.UseCases.AvailableLocales.Delete.Interfaces;
 using Abigo.Application.UseCases.AvailableLocales.get;
 using Abigo.Application.UseCases.AvailableLocales.get.Interfaces;
 using Abigo.Application.UseCases.AvailableLocales.Post;
@@ -44,11 +46,13 @@ namespace Abigo.Application
             service.AddScoped<IRegisterNewAvailableLocale, RegisterNewAvailableLocale>();
             service.AddScoped<IFindLocaleByIdUseCase, FindLocaleByIdUseCase>();
             service.AddScoped<IFIndAllAvailableLocalesUseCase, FindAllAvailablesLocalesUseCase>();
-            service.AddScoped<IFindAllLocalesByCategoryUseCase, IFIndAllLocalesByCategoryUseCase>();
+            service.AddScoped<IFindAllLocalesByCategoryUseCase, FIndAllLocalesByCategoryUseCase>();
             service.AddScoped<IFindAllLocalesInACityUseCase, FindAllLocalesInACityUseCase>();
            
             service.AddScoped<IFindLocaleByNameUseCase, FindLocaleByNameUseCase>();
+            service.AddScoped<IFindAllLocalesByNeighborhoodUseCase, FindAllLocalesByNeighborhoodUseCase>();
             service.AddScoped<IFindLocalesByAccountUseCase, FindLocalesByAccountUseCase>();
+            service.AddScoped<IDeleteAvailableLocaleUseCase, DeleteAvailableLocaleUseCase>();
         }
     }
 }

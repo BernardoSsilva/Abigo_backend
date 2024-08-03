@@ -25,7 +25,7 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
             _dbAccess.AvailableLocales.Remove(localeToDelete);
         }
 
-        public async Task EditLocale(AvailableLocalesEntity localeData)
+        public  void EditLocale(AvailableLocalesEntity localeData)
         {
             _dbAccess.AvailableLocales.Update(localeData);
         }
@@ -63,6 +63,12 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
         public async Task<List<AvailableLocalesEntity>> SearchAvailableLocaleByCity(string localeCity)
         {
             var response = await _dbAccess.AvailableLocales.Where(locale => locale.City == localeCity).ToListAsync();
+            return response;
+        }
+
+        public async Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByNeighborHood(string neighborhoodName)
+        {
+            var response = await _dbAccess.AvailableLocales.Where(locale => locale.NeighboorHood == neighborhoodName).ToListAsync();
             return response;
         }
     }
