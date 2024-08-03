@@ -58,7 +58,7 @@ namespace Abigo.Infrastructure.Migrations
                     b.ToTable("Accountables");
                 });
 
-            modelBuilder.Entity("Abigo.Domain.Entities.DisponibleLocalesEntity", b =>
+            modelBuilder.Entity("Abigo.Domain.Entities.AvailableLocalesEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -130,10 +130,10 @@ namespace Abigo.Infrastructure.Migrations
 
                     b.HasIndex("AccountId");
 
-                    b.ToTable("DisponibleLocales");
+                    b.ToTable("AvailableLocales");
                 });
 
-            modelBuilder.Entity("Abigo.Domain.Entities.DisponibleLocalesEntity", b =>
+            modelBuilder.Entity("Abigo.Domain.Entities.AvailableLocalesEntity", b =>
                 {
                     b.HasOne("Abigo.Domain.Entities.AccountableEntity", "Account")
                         .WithMany("Locales")

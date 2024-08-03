@@ -2,20 +2,20 @@
 
 namespace Abigo.Communication.Requests
 {
-    public class DisponibleLocalesRequestJson
+    public class AvailableLocalesRequestJson
     {
-        public  string AccountId { get; set; } = string.Empty;
-        public  string PostalCode { get; set; } = string.Empty;
-        public  string City { get; set; } = string.Empty;
-        public  UFS UF { get; set; }
-        public  string NeighboorHood { get; set; } = string.Empty;
+        public string AccountId { get; set; } = string.Empty;
+        public string PostalCode { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public UFS UF { get; set; }
+        public string NeighboorHood { get; set; } = string.Empty;
 
-        public  string Street { get; set; } = string.Empty;
+        public string Street { get; set; } = string.Empty;
 
         public string LocaleNumber { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;
-        public  Boolean AcceptsAnimals { get; set; }
+        public Boolean AcceptsAnimals { get; set; }
 
         public int VacanciesNumber { get; set; } = 0;
 

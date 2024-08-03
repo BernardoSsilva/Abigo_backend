@@ -16,7 +16,7 @@ namespace Abigo.Infrastructure
         {
             service.AddScoped<IUnitOfWork, UnitOfWork>();
             service.AddScoped<IAccountablesRepository, AccountablesRepository>();
-            service.AddScoped<IDisponibleLocalesRepository, DisponibleLocalesRepository>();
+            service.AddScoped<IAvailableLocalesRepository, AvailableLocalesRepository>();
         }
     }
 

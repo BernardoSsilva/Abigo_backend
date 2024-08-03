@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Abigo.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abigo.Communication.Responses.DisponibleLocales
+namespace Abigo.Communication.Responses.AvailableLocales
 {
-    public class DisponibleLocalesShortResponseJson
+    public class AvailableLocalesShortResponseJson
     {
         public string Id { get; set; } = string.Empty;
         public string AccountId { get; set; } = string.Empty;

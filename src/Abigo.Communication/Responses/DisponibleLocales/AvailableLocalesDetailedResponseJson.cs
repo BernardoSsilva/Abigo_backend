@@ -1,8 +1,8 @@
 ﻿using Abigo.Domain.Enums;
 
-namespace Abigo.Communication.Responses.DisponibleLocales
+namespace Abigo.Communication.Responses.AvailableLocales
 {
-    public class DisponibleLocalesDetailedResponseJson
+    public class AvailableLocalesDetailedResponseJson
     {
         public string Id { get; set; } = string.Empty;
         public string AccountId { get; set; } = string.Empty;
