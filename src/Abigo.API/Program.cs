@@ -25,7 +25,11 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-    app.UseSwagger();
+    app.UseSwagger(options=> 
+options.SwaggerEndpoint("/Swagger/v1/swagger.json", "production document");
+
+options.RoutePrefox = Spring.Empty
+);
     app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
