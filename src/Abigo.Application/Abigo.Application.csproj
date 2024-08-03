@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MD5" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abigo.Communication\Abigo.Communication.csproj" />
+    <ProjectReference Include="..\Abigo.Domain\Abigo.Domain.csproj" />
+    <ProjectReference Include="..\Abigo.Infrastructure\Abigo.Infrastructure.csproj" />
+    <ProjectReference Include="..\Abigo.JWTAdmin\Abigo.JWTAdmin.csproj" />
+  </ItemGroup>
+
 </Project>
