@@ -21,7 +21,6 @@
     <ProjectReference Include="..\Abigo.Application\Abigo.Application.csproj" />
     <ProjectReference Include="..\Abigo.Communication\Abigo.Communication.csproj" />
     <ProjectReference Include="..\Abigo.Domain\Abigo.Domain.csproj" />
-    <ProjectReference Include="..\Abigo.Exception\Abigo.Exception.csproj" />
     <ProjectReference Include="..\Abigo.Infrastructure\Abigo.Infrastructure.csproj" />
   </ItemGroup>
 

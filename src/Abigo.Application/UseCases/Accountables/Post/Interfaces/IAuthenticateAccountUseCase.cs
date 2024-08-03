@@ -2,7 +2,7 @@
 
 namespace Abigo.Application.UseCases.Accountables.Post.Interfaces
 {
-    public class IAuthenticateAccountUseCase
+    public interface IAuthenticateAccountUseCase
     {
          Task<string> Execute(AuthenticateAccountRequestJson request);
     }

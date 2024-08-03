@@ -2,6 +2,6 @@
 {
     public class MultiplleAccountablesResponseJson
     {
-        public List<AccountableShortResponseJson> accounts { get; set; } = []
+        public List<AccountableShortResponseJson> accounts { get; set; } = [];
     }
 }
