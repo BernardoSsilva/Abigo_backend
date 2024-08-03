@@ -4,7 +4,6 @@ namespace Abigo.Communication.Requests
 {
     public class AvailableLocalesRequestJson
     {
-        public string AccountId { get; set; } = string.Empty;
         public string PostalCode { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public UFS UF { get; set; }
@@ -30,5 +29,7 @@ namespace Abigo.Communication.Requests
         public LocalesCategories Category { get; set; }
 
         public bool IsActive { get; set; }
+
+        public string LocaleName { get; set; } = string.Empty;
     }
 }

@@ -30,13 +30,16 @@ namespace Abigo.Application.UseCases.AvailableLocales.Post
 
             if (!tokenIsAvailable)
             {
-                throw new UnauthorizedAccessException("unhautorized ");
+                throw new UnauthorizedAccessException("unhautorized");
             }
 
             var newLocale = _mapper.Map<AvailableLocalesEntity>(request);
-            newLocale.AccountId = tokenAdmin.DecodeToken(token).AccountId;
+            var decodedToken = tokenAdmin.DecodeToken(token);
 
-            await _repository.CreateNewDisponibleLocale(_mapper.Map<AvailableLocalesEntity>(request));
+            newLocale.AccountId = decodedToken.AccountId.ToString();
+
+            var entityCreate = _mapper.Map<AvailableLocalesEntity>(newLocale);
+            await _repository.CreateNewDisponibleLocale(entityCreate);
             var response = new AvailableLocalesShortResponseJson
             {
                 AccountId = newLocale.AccountId,

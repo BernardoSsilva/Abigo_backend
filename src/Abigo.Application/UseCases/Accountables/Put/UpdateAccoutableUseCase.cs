@@ -1,10 +1,12 @@
 ﻿using Abigo.Application.UseCases.Accountables.Put.Interfaces;
 using Abigo.Communication.Requests;
+using Abigo.Communication.Responses.Accountable;
 using Abigo.Domain.Entities;
 using Abigo.Domain.Models;
 using Abigo.Domain.Repositories;
 using Abigo.JWTAdmin;
 using AutoMapper;
+using MD5Hash;
 
 namespace Abigo.Application.UseCases.Accountables.Put
 {
@@ -21,29 +23,26 @@ namespace Abigo.Application.UseCases.Accountables.Put
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task Execute(AccountableRequestJson request, string id, string token)
+        public async Task<AccountableDetailedResponse> Execute(AccountableRequestJson request,  string token)
         {
             var tokenAdmin = new AdminToken();
 
             var decodedToken = tokenAdmin.DecodeToken(token);
-            if (decodedToken.AccountId != id)
-            {
-                throw new UnauthorizedAccessException("Unauthorized");
-            }
+          
 
-            var accountToUpdate = await _repository.SearchAccountable(id);
+            var accountToUpdate = await _repository.SearchAccountable(decodedToken.AccountId);
 
          
             if(accountToUpdate is null)
             {
                 throw new ArgumentException("not found");
             }
-            var newAccoutableData = _mapper.Map<AccountableEntity>(request);
-            accountToUpdate = _mapper.Map(accountToUpdate, newAccoutableData);
+            accountToUpdate = _mapper.Map(request, accountToUpdate);
 
-            await _repository.UpdateAccountable(accountToUpdate);
+            accountToUpdate.AccessPassword = accountToUpdate.AccessPassword.ToString().GetMD5();
+            _repository.UpdateAccountable(accountToUpdate);
             await _unitOfWork.Commit();
-            return;
+            return _mapper.Map<AccountableDetailedResponse>(accountToUpdate);
         }
     }
 }

@@ -6,6 +6,7 @@ using Abigo.Domain.Entities;
 using Abigo.Domain.Models;
 using Abigo.Domain.Repositories;
 using AutoMapper;
+using MD5Hash;
 
 namespace Abigo.Application.UseCases.Accountables.Post
 {
@@ -27,15 +28,26 @@ namespace Abigo.Application.UseCases.Accountables.Post
         {
 
            
-                var newEntity = _mapper.Map<AccountableEntity>(request);
+            var newEntity = _mapper.Map<AccountableEntity>(request);
 
-                var result = await _repository.CreateNewAccount(newEntity);
+            var userAlreadyExistis =  (await _repository.FindAllAccountables()).FirstOrDefault(account => account.ConnectionEmail == request.ConnectionEmail);
+
+
+            if(userAlreadyExistis is not null)
+            {
+                throw new ArgumentException("Conflict");
+            }
+
+            newEntity.AccessPassword = request.AccessPassword.ToString().GetMD5();
+            var result = await _repository.CreateNewAccount(newEntity);
+
 
             if (!result)
             {
                 throw new ArgumentException("Error on create user");
             }
 
+            await _unitOfWork.Commit();
             return _mapper.Map<AccountableShortResponseJson>(newEntity);
            
         }

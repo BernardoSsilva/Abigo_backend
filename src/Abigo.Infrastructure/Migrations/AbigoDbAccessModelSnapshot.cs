@@ -85,6 +85,10 @@ namespace Abigo.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("LocaleName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("LocaleNumber")
                         .IsRequired()
                         .HasColumnType("text");

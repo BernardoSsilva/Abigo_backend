@@ -28,7 +28,7 @@ namespace Abigo.Application.UseCases.Accountables.Get
 
 
 
-            return _mapper.Map<AccountableDetailedResponse>(result.Select(accoutable => accoutable.Name == name));
+            return _mapper.Map<AccountableDetailedResponse>(result.FirstOrDefault(accoutable => accoutable.Name == name));
         }
     }
 }

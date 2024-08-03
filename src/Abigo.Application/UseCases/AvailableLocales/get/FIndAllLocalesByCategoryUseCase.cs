@@ -7,13 +7,13 @@ using AutoMapper;
 
 namespace Abigo.Application.UseCases.AvailableLocales.get
 {
-    internal class IFIndAllLocalesByCategoryUseCase : IFindAllLocalesByCategoryUseCase
+    internal class FIndAllLocalesByCategoryUseCase : IFindAllLocalesByCategoryUseCase
     {
 
         private readonly IAvailableLocalesRepository _repository;
         private readonly IMapper _mapper;
 
-        public IFIndAllLocalesByCategoryUseCase(IAvailableLocalesRepository repository, IMapper mapper)
+        public FIndAllLocalesByCategoryUseCase(IAvailableLocalesRepository repository, IMapper mapper)
         {
             _mapper = mapper;
             _repository = repository;

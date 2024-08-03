@@ -13,27 +13,21 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
         {
             _dbAccess = dbAccess;
         }
-        public async Task<bool> CreateNewDisponibleLocale(AvailableLocalesEntity localeData)
+        public async Task CreateNewDisponibleLocale(AvailableLocalesEntity localeData)
         {
             await _dbAccess.AvailableLocales.AddAsync(localeData);
-            return true;
         }
 
-        public async Task<bool> DeleteLocale(string localeId)
+        public async Task DeleteLocale(string localeId)
         {
             var localeToDelete = await _dbAccess.AvailableLocales.FirstOrDefaultAsync(locale => locale.Id == localeId);
-            if (localeToDelete is null)
-            {
-                return false;
-            }
+        
             _dbAccess.AvailableLocales.Remove(localeToDelete);
-            return true;
         }
 
-        public async Task<bool> EditLocale(AvailableLocalesEntity localeData)
+        public  void EditLocale(AvailableLocalesEntity localeData)
         {
             _dbAccess.AvailableLocales.Update(localeData);
-            return true;
         }
 
         public async Task<List<AvailableLocalesEntity>> FindAllAvailableLocales()
@@ -69,6 +63,12 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
         public async Task<List<AvailableLocalesEntity>> SearchAvailableLocaleByCity(string localeCity)
         {
             var response = await _dbAccess.AvailableLocales.Where(locale => locale.City == localeCity).ToListAsync();
+            return response;
+        }
+
+        public async Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByNeighborHood(string neighborhoodName)
+        {
+            var response = await _dbAccess.AvailableLocales.Where(locale => locale.NeighboorHood == neighborhoodName).ToListAsync();
             return response;
         }
     }

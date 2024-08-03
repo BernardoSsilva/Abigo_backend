@@ -2,6 +2,6 @@
 {
     public interface IDeleteAccountableUseCase
     {
-        Task Execute(string id, string token); 
+        Task<bool> Execute(string token); 
     }
 }

@@ -5,7 +5,7 @@ namespace Abigo.Domain.Repositories
 {
     public interface IAvailableLocalesRepository
     {
-        Task<bool> CreateNewDisponibleLocale(AvailableLocalesEntity localeData);
+        Task CreateNewDisponibleLocale(AvailableLocalesEntity localeData);
         Task<List<AvailableLocalesEntity>> FindAllAvailableLocales();
 
         Task<List<AvailableLocalesEntity>> FindLocalesByCategory(LocalesCategories category);
@@ -17,8 +17,9 @@ namespace Abigo.Domain.Repositories
 
 
         Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByAccount(string accountId);
+        Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByNeighborHood(string neighborhoodName);
 
-        Task<bool> EditLocale(AvailableLocalesEntity localeData);
-        Task<bool> DeleteLocale(string localeId);
+        void EditLocale(AvailableLocalesEntity localeData);
+        Task DeleteLocale(string localeId);
     }
 }

@@ -19,27 +19,23 @@ namespace Abigo.Application.UseCases.Accountables.Delete
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task Execute(string id, string token)
+        public async Task<bool> Execute( string token)
         {
             var tokenAdmin = new AdminToken();
 
             var decodedToken = tokenAdmin.DecodeToken(token);
             
             
-            if (decodedToken.AccountId != id)
-            {
-                throw new UnauthorizedAccessException("Unauthorized");
-            }
-
-            var entityToDelete = await _repository.SearchAccountable(id);
+        
+            var entityToDelete = await _repository.SearchAccountable(decodedToken.AccountId);
 
             if(entityToDelete is null)
             {
                 throw new ArgumentException("not found");
             }
-            await _repository.DeleteAccountable(id);
+            _repository.DeleteAccountable(decodedToken.AccountId);
             await _unitOfWork.Commit();
-            return;
+            return true;
 
         }
     }
