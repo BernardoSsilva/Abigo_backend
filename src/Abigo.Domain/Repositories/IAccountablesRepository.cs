@@ -2,15 +2,15 @@
 
 namespace Abigo.Domain.Repositories
 {
-    public interface AccountablesRepository
+    public interface IAccountablesRepository
     {
-        public Task<bool> CreateNewAccount(AccountableEntity accountable);
+         Task<bool> CreateNewAccount(AccountableEntity accountable);
 
-        public Task<List<AccountableEntity>> FindAllAccountables();
+         Task<List<AccountableEntity>> FindAllAccountables();
 
-        public Task<AccountableEntity> SearchAccountable(string id);
+         Task<AccountableEntity?> SearchAccountable(string id);
 
-        public Task<bool> UpdateAccountable(AccountableEntity accountable, string id);
-        public Task<bool> DeleteAccountable(string id);
+         Task<bool> UpdateAccountable(AccountableEntity accountable);
+         Task<bool> DeleteAccountable(string accountableId);
     }
 }

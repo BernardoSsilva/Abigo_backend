@@ -2,14 +2,18 @@
 
 namespace Abigo.Domain.Entities
 {
-    public class AccountableEntity: BaseEntity
+    public class AccountableEntity
     {
-        public required string  Name { get; set; }
-        public List<ContactModel> Contacts { get; set; } = [];
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        public required string ConnectionEmail { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string contactEmail { get; set; } = string.Empty;
+        public string contactPhone { get; set; } = string.Empty;
+        public string instagram { get; set; } = string.Empty;
+        public  string ConnectionEmail { get; set; } = string.Empty;
 
-        public required string AccessPassword { get; set; }
+        public  string AccessPassword { get; set; } = string.Empty;
+
 
     }
 }

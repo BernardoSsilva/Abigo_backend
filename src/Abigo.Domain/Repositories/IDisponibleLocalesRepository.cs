@@ -5,16 +5,16 @@ namespace Abigo.Domain.Repositories
 {
     public interface IDisponibleLocalesRepository
     {
-        public Task<bool> CreateNewDisponibleLocale(DisponibleLocalesEntity localeData);
-        public Task<List<DisponibleLocalesEntity>> FindAllDisponibleLocales();
+         Task<bool> CreateNewDisponibleLocale(DisponibleLocalesEntity localeData);
+         Task<List<DisponibleLocalesEntity>> FindAllDisponibleLocales();
 
-        public Task<List<DisponibleLocalesEntity>> FindLocalesByCategory(LocalesCategories category);
+         Task<List<DisponibleLocalesEntity>> FindLocalesByCategory(LocalesCategories category);
 
-        public Task<DisponibleLocalesEntity> SearchDisponibleLocale(string id);
+         Task<DisponibleLocalesEntity?> SearchDisponibleLocale(string id);
 
-        public Task<List<DisponibleLocalesEntity>> SearchDisponibleLocalesByAccount(string accountId);
+         Task<List<DisponibleLocalesEntity>> SearchDisponibleLocalesByAccount(string accountId);
 
-        public Task<bool> EditLocale(DisponibleLocalesEntity localeData, string localeId);
-        public Task<bool> DeleteLocale(string localeId);
+         Task<bool> EditLocale(DisponibleLocalesEntity localeData);
+         Task<bool> DeleteLocale(string localeId);
     }
 }
