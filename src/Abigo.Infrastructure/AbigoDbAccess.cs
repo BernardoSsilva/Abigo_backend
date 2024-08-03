@@ -12,6 +12,6 @@ namespace Abigo.Infrastructure
         }
 
         public DbSet<AccountableEntity> Accountables { get; set; }
-        public DbSet<DisponibleLocalesEntity> DisponibleLocales { get; set; }
+        public DbSet<AvailableLocalesEntity> AvailableLocales { get; set; }
     }
 }

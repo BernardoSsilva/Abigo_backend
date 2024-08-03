@@ -28,7 +28,7 @@ namespace Abigo.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DisponibleLocales",
+                name: "AvailableLocales",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
@@ -52,7 +52,7 @@ namespace Abigo.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DisponibleLocales", x => x.Id);
+                    table.PrimaryKey("PK_AvailableLocales", x => x.Id);
                 });
         }
 
@@ -63,7 +63,7 @@ namespace Abigo.Infrastructure.Migrations
                 name: "Accountables");
 
             migrationBuilder.DropTable(
-                name: "DisponibleLocales");
+                name: "AvailableLocales");
         }
     }
 }

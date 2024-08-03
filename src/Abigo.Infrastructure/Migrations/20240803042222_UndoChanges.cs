@@ -11,25 +11,25 @@ namespace Abigo.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountId",
-                table: "DisponibleLocales");
+                name: "FK_AvailableLocales_Accountables_AccountId",
+                table: "AvailableLocales");
 
             migrationBuilder.DropIndex(
-                name: "IX_DisponibleLocales_AccountId",
-                table: "DisponibleLocales");
+                name: "IX_AvailableLocales_AccountId",
+                table: "AvailableLocales");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateIndex(
-                name: "IX_DisponibleLocales_AccountId",
-                table: "DisponibleLocales",
+                name: "IX_AvailableLocales_AccountId",
+                table: "AvailableLocales",
                 column: "AccountId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountId",
-                table: "DisponibleLocales",
+                name: "FK_AvailableLocales_Accountables_AccountId",
+                table: "AvailableLocales",
                 column: "AccountId",
                 principalTable: "Accountables",
                 principalColumn: "Id",

@@ -11,25 +11,25 @@ namespace Abigo.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountableEntityId",
-                table: "DisponibleLocales");
+                name: "FK_AvailableLocales_Accountables_AccountableEntityId",
+                table: "AvailableLocales");
 
             migrationBuilder.DropIndex(
-                name: "IX_DisponibleLocales_AccountableEntityId",
-                table: "DisponibleLocales");
+                name: "IX_AvailableLocales_AccountableEntityId",
+                table: "AvailableLocales");
 
             migrationBuilder.DropColumn(
                 name: "AccountableEntityId",
-                table: "DisponibleLocales");
+                table: "AvailableLocales");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DisponibleLocales_AccountId",
-                table: "DisponibleLocales",
+                name: "IX_AvailableLocales_AccountId",
+                table: "AvailableLocales",
                 column: "AccountId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountId",
-                table: "DisponibleLocales",
+                name: "FK_AvailableLocales_Accountables_AccountId",
+                table: "AvailableLocales",
                 column: "AccountId",
                 principalTable: "Accountables",
                 principalColumn: "Id",
@@ -40,27 +40,27 @@ namespace Abigo.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountId",
-                table: "DisponibleLocales");
+                name: "FK_AvailableLocales_Accountables_AccountId",
+                table: "AvailableLocales");
 
             migrationBuilder.DropIndex(
-                name: "IX_DisponibleLocales_AccountId",
-                table: "DisponibleLocales");
+                name: "IX_AvailableLocales_AccountId",
+                table: "AvailableLocales");
 
             migrationBuilder.AddColumn<string>(
                 name: "AccountableEntityId",
-                table: "DisponibleLocales",
+                table: "AvailableLocales",
                 type: "text",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_DisponibleLocales_AccountableEntityId",
-                table: "DisponibleLocales",
+                name: "IX_AvailableLocales_AccountableEntityId",
+                table: "AvailableLocales",
                 column: "AccountableEntityId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DisponibleLocales_Accountables_AccountableEntityId",
-                table: "DisponibleLocales",
+                name: "FK_AvailableLocales_Accountables_AccountableEntityId",
+                table: "AvailableLocales",
                 column: "AccountableEntityId",
                 principalTable: "Accountables",
                 principalColumn: "Id");

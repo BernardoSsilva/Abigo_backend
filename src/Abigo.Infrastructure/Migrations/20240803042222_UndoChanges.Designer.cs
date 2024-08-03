@@ -58,7 +58,7 @@ namespace Abigo.Infrastructure.Migrations
                     b.ToTable("Accountables");
                 });
 
-            modelBuilder.Entity("Abigo.Domain.Entities.DisponibleLocalesEntity", b =>
+            modelBuilder.Entity("Abigo.Domain.Entities.AvailableLocalesEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -128,7 +128,7 @@ namespace Abigo.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DisponibleLocales");
+                    b.ToTable("AvailableLocales");
                 });
 #pragma warning restore 612, 618
         }
