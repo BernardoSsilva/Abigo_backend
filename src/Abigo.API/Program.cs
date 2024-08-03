@@ -31,7 +31,7 @@ var app = builder.Build();
 {
 options.SwaggerEndpoint("/Swagger/v1/swagger.json", "production document");
 
-options.RoutePrefox = Spring.Empty;
+options.RoutePrefix = Spring.Empty;
 });
 
 app.UseHttpsRedirection();
