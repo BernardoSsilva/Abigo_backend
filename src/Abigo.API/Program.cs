@@ -1,4 +1,5 @@
 using Abigo.Infrastructure;
+using Abigo.Application;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure();
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

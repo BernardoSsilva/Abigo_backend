@@ -12,6 +12,10 @@ namespace Abigo.Domain.Repositories
 
         Task<AvailableLocalesEntity?> SearchDisponibleLocale(string id);
 
+        Task<AvailableLocalesEntity?> SearchAvailableLocaleByName(string localeName);
+        Task<List<AvailableLocalesEntity>> SearchAvailableLocaleByCity(string localeCity);
+
+
         Task<List<AvailableLocalesEntity>> SearchAvailableLocalesByAccount(string accountId);
 
         Task<bool> EditLocale(AvailableLocalesEntity localeData);
