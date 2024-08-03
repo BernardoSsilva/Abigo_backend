@@ -59,5 +59,17 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
             var response = await _dbAccess.AvailableLocales.Where(locale => locale.AccountId == accountId).ToListAsync();
             return response;
         }
+
+        public async Task<AvailableLocalesEntity?> SearchAvailableLocaleByName(string localeName)
+        {
+            var response = await _dbAccess.AvailableLocales.FirstOrDefaultAsync(locale => locale.LocaleName == localeName);
+            return response;
+        }
+
+        public async Task<List<AvailableLocalesEntity>> SearchAvailableLocaleByCity(string localeCity)
+        {
+            var response = await _dbAccess.AvailableLocales.Where(locale => locale.City == localeCity).ToListAsync();
+            return response;
+        }
     }
 }

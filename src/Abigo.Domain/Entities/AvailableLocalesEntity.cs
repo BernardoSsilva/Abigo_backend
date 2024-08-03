@@ -34,6 +34,8 @@ namespace Abigo.Domain.Entities
 
         public bool IsActive { get; set; }
 
+        public required string LocaleName { get; set; }
+
 
     }
 }

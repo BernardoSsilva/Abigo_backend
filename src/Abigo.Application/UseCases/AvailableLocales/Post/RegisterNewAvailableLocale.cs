@@ -46,7 +46,6 @@ namespace Abigo.Application.UseCases.AvailableLocales.Post
                 Id = newLocale.Id,
                 IsActive = newLocale.IsActive,
                 NeighboorHood = newLocale.NeighboorHood,
-                Street = newLocale.Street,
                 VacanciesNumber = newLocale.VacanciesNumber,
                 contactPhone = newLocale.contactPhone,
 
