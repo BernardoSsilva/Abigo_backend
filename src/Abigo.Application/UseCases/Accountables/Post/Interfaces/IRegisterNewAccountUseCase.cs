@@ -1,9 +1,10 @@
 ﻿using Abigo.Communication.Requests;
+using Abigo.Communication.Responses.Accountable;
 
 namespace Abigo.Application.UseCases.Accountables.Post.Interfaces
 {
     public interface IRegisterNewAccountUseCase
     {
-        Task Execute(AccountableRequestJson request);
+        Task<AccountableShortResponseJson> Execute(AccountableRequestJson request);
     }
 }
