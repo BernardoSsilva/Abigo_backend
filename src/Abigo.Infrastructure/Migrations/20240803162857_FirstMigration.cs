@@ -5,7 +5,7 @@
 namespace Abigo.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Create : Migration
+    public partial class FirstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,7 +48,8 @@ namespace Abigo.Infrastructure.Migrations
                     DonationKey = table.Column<string>(type: "text", nullable: false),
                     ReferencePoint = table.Column<string>(type: "text", nullable: false),
                     Category = table.Column<int>(type: "integer", nullable: false),
-                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    LocaleName = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

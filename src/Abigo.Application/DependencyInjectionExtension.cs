@@ -38,7 +38,7 @@ namespace Abigo.Application
             service.AddScoped<IRegisterNewAccountUseCase, RegisterNewAccountUseCase>();
             service.AddScoped<IFindAccoutableByNameUseCase, FindAccoutableByNameUseCase>();
             service.AddScoped<IListAllAccountablesUseCase, ListAllAccoutablesUseCase>();
-            service.AddScoped<ISearcAccountableByIdUseCase, SearcAccountableByIdUseCase>();
+            service.AddScoped<ISearchAccountableByIdUseCase, SearchAccountableByIdUseCase>();
             service.AddScoped<IDeleteAccountableUseCase, DeleteAccountableUseCase>();
             service.AddScoped<IUpdateAvailableLocaleUseCase, UpdateAvailableLocaleUseCase>();
             service.AddScoped<IRegisterNewAvailableLocale, RegisterNewAvailableLocale>();

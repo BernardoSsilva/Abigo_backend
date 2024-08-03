@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Abigo.Infrastructure.Migrations
 {
     [DbContext(typeof(AbigoDbAccess))]
-    [Migration("20240803041903_ThirdMigration")]
-    partial class ThirdMigration
+    [Migration("20240803162857_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,6 +88,10 @@ namespace Abigo.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("LocaleName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("LocaleNumber")
                         .IsRequired()
                         .HasColumnType("text");
@@ -128,25 +132,7 @@ namespace Abigo.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountId");
-
                     b.ToTable("AvailableLocales");
-                });
-
-            modelBuilder.Entity("Abigo.Domain.Entities.AvailableLocalesEntity", b =>
-                {
-                    b.HasOne("Abigo.Domain.Entities.AccountableEntity", "Account")
-                        .WithMany("Locales")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
-            modelBuilder.Entity("Abigo.Domain.Entities.AccountableEntity", b =>
-                {
-                    b.Navigation("Locales");
                 });
 #pragma warning restore 612, 618
         }

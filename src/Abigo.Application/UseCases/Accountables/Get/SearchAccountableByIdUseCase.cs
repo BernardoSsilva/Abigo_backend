@@ -5,13 +5,13 @@ using AutoMapper;
 
 namespace Abigo.Application.UseCases.Accountables.Get
 {
-    public class SearcAccountableByIdUseCase : ISearcAccountableByIdUseCase
+    public class SearchAccountableByIdUseCase : ISearchAccountableByIdUseCase
     {
         private readonly IAccountablesRepository _repository;
         private readonly IMapper _mapper;
 
 
-        public SearcAccountableByIdUseCase(IAccountablesRepository repository, IMapper mapper)
+        public SearchAccountableByIdUseCase(IAccountablesRepository repository, IMapper mapper)
         {
 
             _mapper = mapper;

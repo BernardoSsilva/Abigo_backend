@@ -32,13 +32,11 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
         public async Task<bool> DeleteAccountable(string accountableId)
         {
             var entityToDelete = await _dbAccess.Accountables.FirstOrDefaultAsync(accountable => accountable.Id == accountableId);
-            if(entityToDelete is null)
-            {
-                return false;
-            }
-            _dbAccess.Accountables.Remove(entityToDelete);
+
+            _dbAccess.Remove(entityToDelete);
             return true;
         }
+
 
         public async Task<List<AccountableEntity>> FindAllAccountables()
         {
@@ -54,11 +52,10 @@ namespace Abigo.Infrastructure.DataAccess.Repositories
             return response;
         }
 
-        public async Task<bool> UpdateAccountable(AccountableEntity accountable)
+        public void UpdateAccountable(AccountableEntity accountable)
         {
-        
             _dbAccess.Accountables.Update(accountable);
-            return true;
+          
         }
     }
 }

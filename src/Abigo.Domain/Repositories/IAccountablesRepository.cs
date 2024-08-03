@@ -10,7 +10,7 @@ namespace Abigo.Domain.Repositories
 
          Task<AccountableEntity?> SearchAccountable(string id);
 
-         Task<bool> UpdateAccountable(AccountableEntity accountable);
+         void UpdateAccountable(AccountableEntity accountable);
          Task<bool> DeleteAccountable(string accountableId);
     }
 }
