@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Abigo.Application\Abigo.Application.csproj" />
+    <ProjectReference Include="..\..\src\Abigo.Communication\Abigo.Communication.csproj" />
+    <ProjectReference Include="..\..\src\Abigo.Domain\Abigo.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Abigo.Infrastructure\Abigo.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

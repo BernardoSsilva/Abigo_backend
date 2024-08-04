@@ -37,6 +37,8 @@ namespace Abigo.Domain.Entities
 
         public required string LocaleName { get; set; }
 
+        public required string LocalizationLink { get; set; }
+
 
     }
 }
