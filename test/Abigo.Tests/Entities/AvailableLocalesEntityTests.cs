@@ -20,6 +20,8 @@ namespace Abigo.Tests.Entities
                 Street = "SampleStreet",
                 AcceptsAnimals = true,
                 LocaleName = "SampleLocale"
+                LocalizationLink = "test link"
+
             };
 
             // Assert
@@ -41,7 +43,7 @@ namespace Abigo.Tests.Entities
             Assert.Equal(string.Empty, entity.DonationKey);
             Assert.Equal(string.Empty, entity.ReferencePoint);
             Assert.Equal(string.Empty, entity.HelpDescription);
-            Assert.Equal(LocalesCategories.None, entity.Category);
+            Assert.Equal(LocalesCategories.Shelter, entity.Category);
             Assert.False(entity.IsActive);
             Assert.Equal("SampleLocale", entity.LocaleName);
         }
@@ -59,7 +61,8 @@ namespace Abigo.Tests.Entities
                 NeighboorHood = "SampleNeighboorHood",
                 Street = "SampleStreet",
                 AcceptsAnimals = true,
-                LocaleName = "SampleLocale"
+                LocaleName = "SampleLocale",
+                LocalizationLink = "test link"
             };
 
             var id = Guid.NewGuid().ToString();
@@ -72,7 +75,7 @@ namespace Abigo.Tests.Entities
             var donationKey = "donationKey";
             var referencePoint = "Near Park";
             var helpDescription = "Need help with groceries";
-            var category = LocalesCategories.Food;
+            var category = LocalesCategories.FoodPoints;
             var isActive = true;
 
             // Act
