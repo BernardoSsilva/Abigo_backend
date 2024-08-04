@@ -133,12 +133,12 @@ namespace Abigo.API.Controllers
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> DeleteAvailableLocale([FromServices] IDeleteAvailableLocaleUseCase useCase, [FromHeader] string authToken, [FromRoute] string id)
+        public async Task<IActionResult> DeleteAvailableLocale([FromServices] IDeleteAvailableLocaleUseCase useCase, [FromHeader] string AuthToken, [FromRoute] string id)
         {
             try
             {
 
-            await useCase.Execute(id, authToken);
+            await useCase.Execute(id, AuthToken);
             return Ok();
             } catch(Exception ex)
             {
@@ -155,11 +155,11 @@ namespace Abigo.API.Controllers
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> UpdateAvailableLocale([FromServices] IUpdateAvailableLocaleUseCase useCase, [FromHeader] string authToken, [FromRoute] string id, [FromBody] AvailableLocalesRequestJson requestJson)
+        public async Task<IActionResult> UpdateAvailableLocale([FromServices] IUpdateAvailableLocaleUseCase useCase, [FromHeader] string AuthToken, [FromRoute] string id, [FromBody] AvailableLocalesRequestJson requestJson)
         {
             try
             {
-                await useCase.Execute(id, authToken, requestJson);
+                await useCase.Execute(id, AuthToken, requestJson);
                 return Ok();
             }
             catch (Exception ex) {
@@ -171,8 +171,5 @@ namespace Abigo.API.Controllers
             }
 
         }
-
-
-
     }
 }
