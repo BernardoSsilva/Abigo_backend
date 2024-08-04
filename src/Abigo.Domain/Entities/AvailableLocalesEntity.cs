@@ -1,6 +1,4 @@
 ﻿using Abigo.Domain.Enums;
-using Abigo.Domain.Models;
-using System.Numerics;
 
 namespace Abigo.Domain.Entities
 {
@@ -37,6 +35,7 @@ namespace Abigo.Domain.Entities
 
         public required string LocaleName { get; set; }
 
+        public required string LocalizationLink { get; set; }
 
     }
 }

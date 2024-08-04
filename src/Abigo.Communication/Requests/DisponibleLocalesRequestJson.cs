@@ -31,6 +31,8 @@ namespace Abigo.Communication.Requests
         public bool IsActive { get; set; }
 
         public string LocaleName { get; set; } = string.Empty;
+        public string LocalizationLink { get; set; } = string.Empty;
+
         public string HelpDescription { get; set; } = string.Empty;
     }
 }

@@ -35,6 +35,9 @@ namespace Abigo.Communication.Responses.AvailableLocales
         public string LocaleName { get; set; } = string.Empty;
         public string HelpDescription { get; set; } = string.Empty;
 
+        public string LocalizationLink { get; set; } = string.Empty;
+
+
 
     }
 }
