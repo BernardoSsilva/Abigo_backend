@@ -68,7 +68,7 @@ namespace Abigo.API.Controllers
         }
 
         [HttpGet]
-        [Route("lLocale/find/locale/name")]
+        [Route("locale/find/locale/name")]
         [ProducesResponseType(typeof(AvailableLocalesDetailedResponseJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> FindAvailableLocaleByName([FromServices] IFindLocaleByNameUseCase useCase, [FromQuery(Name = "localeName")] string localeName)
