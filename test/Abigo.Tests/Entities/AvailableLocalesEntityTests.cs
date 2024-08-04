@@ -19,7 +19,7 @@ namespace Abigo.Tests.Entities
                 NeighboorHood = "SampleNeighboorHood",
                 Street = "SampleStreet",
                 AcceptsAnimals = true,
-                LocaleName = "SampleLocale"
+                LocaleName = "SampleLocale",
                 LocalizationLink = "test link"
 
             };
