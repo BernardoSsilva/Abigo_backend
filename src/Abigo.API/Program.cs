@@ -10,10 +10,12 @@ if (string.IsNullOrEmpty(connectionString))
 {
     throw new ArgumentException("Connection string 'DefaultConnection' is null or empty.");
 }
+
 // Add services to the container.
 builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<AbigoDbAccess>(options => options.UseNpgsql(connectionString));
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,7 +26,7 @@ builder.Services.AddApplication();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
