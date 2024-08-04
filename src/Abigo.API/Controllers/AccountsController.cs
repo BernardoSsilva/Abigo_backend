@@ -95,10 +95,10 @@ namespace Abigo.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateAccount([FromHeader] string authToken, [FromServices] IUpdateAccountableUseCase useCase, [FromBody] AccountableRequestJson requestBody)
+        public async Task<IActionResult> UpdateAccount([FromHeader] string AuthToken, [FromServices] IUpdateAccountableUseCase useCase, [FromBody] AccountableRequestJson requestBody)
         {
             try {
-                var result = await useCase.Execute(requestBody,  authToken);
+                var result = await useCase.Execute(requestBody, AuthToken);
 
                 return Ok(result);
 
@@ -118,11 +118,11 @@ namespace Abigo.API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteAccount([FromHeader] string authToken, [FromServices] IDeleteAccountableUseCase useCase)
+        public async Task<IActionResult> DeleteAccount([FromHeader] string AuthToken, [FromServices] IDeleteAccountableUseCase useCase)
         {
             try
             {
-                var result = await useCase.Execute(authToken);
+                var result = await useCase.Execute(AuthToken);
                 return NoContent();
 
             }catch(Exception ex)
